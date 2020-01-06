@@ -175,8 +175,9 @@ return [
     'menu' => [
         [
             'text' => 'Usuários',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-user',
+            'active' => ['admin/users', 'admin/users/*']
         ],
     ],
 
@@ -217,21 +218,21 @@ return [
     'plugins' => [
         [
             'name' => 'Datatables',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
