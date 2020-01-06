@@ -8,6 +8,7 @@
 
 @php( $password_reset_url = View::getSection('password_reset_url') ?? config('adminlte.password_reset_url', 'password/reset') )
 @php( $dashboard_url = View::getSection('dashboard_url') ?? config('adminlte.dashboard_url', 'home') )
+@php( $register_url = config('adminlte.register_url', '') )
 
 @if (config('adminlte.use_route_url', false))
     @php( $password_reset_url = $password_reset_url ? route($password_reset_url) : '' )
@@ -43,7 +44,7 @@
             </div>
         @enderror
         <div class="help-block text-center">
-            {{ __('adminlte::adminlte.confirm_password_message') }}
+            Digite sua senha para continuar
         </div>
         <div class="text-center">
             <a href="{{ $password_reset_url }}">
