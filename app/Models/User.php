@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Notifications\ResetPasswordNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -35,13 +34,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [];
-
-    public function setPasswordAttribute($input)
-    {
-        if ($input && Hash::needsRehash($input)) {
-            $this->attributes['password'] = Hash::make($input);
-        }
-    }
 
     /**
      * Send the password reset notification.
