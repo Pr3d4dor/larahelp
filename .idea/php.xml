@@ -96,6 +96,9 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-query-detector" />
+      <path value="$PROJECT_DIR$/vendor/lucascudo/laravel-pt-br-localization" />
+      <path value="$PROJECT_DIR$/vendor/jeroennoten/laravel-adminlte" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
