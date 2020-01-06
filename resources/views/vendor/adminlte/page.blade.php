@@ -154,6 +154,7 @@
 
             <div class="content-header">
                 <div class="{{config('adminlte.classes_content_header', 'container-fluid')}}">
+                    @include('utils.flash-message')
                     @yield('content_header')
                 </div>
             </div>
