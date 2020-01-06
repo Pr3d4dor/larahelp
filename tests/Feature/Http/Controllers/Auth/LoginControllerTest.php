@@ -12,7 +12,7 @@ class LoginControllerTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function login_displays_the_login_form()
+    public function it_displays_the_login_form()
     {
         $response = $this->get(route('login'));
 
@@ -21,7 +21,7 @@ class LoginControllerTest extends TestCase
     }
 
     /** @test */
-    public function login_displays_validation_errors()
+    public function it_displays_validation_errors()
     {
         $response = $this->post('/login', []);
 
@@ -30,7 +30,7 @@ class LoginControllerTest extends TestCase
     }
 
     /** @test */
-    public function login_authenticates_and_redirects_user()
+    public function it_authenticates_and_redirects_user()
     {
         $user = factory(User::class)->create();
 
