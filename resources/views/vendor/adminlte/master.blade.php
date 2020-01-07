@@ -23,6 +23,9 @@
     @else
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @endif
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="@yield('classes_body')" @yield('body_data')>
 
@@ -32,6 +35,12 @@
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+
+<script>
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+    });
+</script>
 
 @include('adminlte::plugins', ['type' => 'js'])
 
