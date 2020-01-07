@@ -174,6 +174,12 @@ return [
 
     'menu' => [
         [
+            'text' => 'Dashboard',
+            'route'  => 'admin.dashboard',
+            'icon' => 'fas fa-fw fa-home',
+            'active' => ['admin']
+        ],
+        [
             'text' => 'Usuários',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-user',
