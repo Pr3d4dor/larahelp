@@ -121,4 +121,36 @@ class UserControllerTest extends TestCase
         $this->assertEquals('New name', $user->fresh()->name);
         $this->assertEquals('mail@mail.com', $user->fresh()->email);
     }
+
+    /** @test */
+    public function it_can_deletes_a_user()
+    {
+        [$user, $userToDelete] = factory(User::class, 2)->create();
+
+        $response = $this->actingAs($user)->delete(route('admin.users.destroy', [
+            'user' => $userToDelete->getKey()
+        ]));
+
+        $response->assertStatus(200);
+        $response->assertJson([
+            'email' => $userToDelete->email,
+            'name' => $userToDelete->name,
+        ]);
+        $this->assertDatabaseMissing('users', [
+           'email' => $userToDelete->email,
+           'name' => $userToDelete->name,
+        ]);
+    }
+
+    /** @test */
+    public function it_cant_deletes_a_nonexistent_user()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->delete(route('admin.users.destroy', [
+            'user' => 2,
+        ]));
+
+        $response->assertStatus(404);
+    }
 }

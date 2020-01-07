@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Usuários')
 
 @section('content_header')
     <div class="p-2">
@@ -39,9 +39,9 @@
                             <a class="btn btn-xs btn-warning" href="{{ route('admin.users.edit', $user->id) }}">
                                 Editar
                             </a>
-                            <a class="btn btn-xs btn-danger user-destroy" data-id="{{ $user->id }}">
+                            <button type="button" class="btn btn-xs btn-danger user-destroy" data-id="{{ $user->id }}">
                                 Excluir
-                            </a>
+                            </button>
                         </td>
                     </tr>
                 @endforeach
@@ -71,6 +71,46 @@
                  { "orderable": false },
              ]
          });
+
+         $('.user-destroy').on('click', function () {
+             var userId = $(this).data('id');
+             Swal.fire({
+                 title: 'Confirma a exclusão do usuário?',
+                 confirmButtonText: 'Confirmar',
+                 cancelButtonText: 'Cancelar',
+                 showCancelButton: true,
+                 showCloseButton: true
+             })
+             .then((confirm) => {
+                 if (!confirm) {
+                     return;
+                 }
+
+                 $.ajax({
+                     url: '{{ route('admin.users.destroy', '_user') }}'.replace('_user', userId),
+                     method: 'DELETE',
+                     success: function (xhr) {
+                         Swal.fire({
+                             icon: 'success',
+                             title: 'Usuário deletado com sucesso!',
+                             showConfirmButton: false,
+                             timer: 1500
+                         })
+                         .then(() => {
+                             window.location.reload();
+                         });
+                     },
+                     error: function (xhr) {
+                         Swal.fire({
+                             icon: 'error',
+                             title: 'Falha ao deletar usuario!',
+                             showConfirmButton: true,
+                             timer: 1500
+                         });
+                     }
+                 });
+             });
+         })
      });
  </script>
 @endsection
