@@ -37,8 +37,18 @@
 <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 
 <script>
-    $.ajaxSetup({
-        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+    $(function() {
+        // CSRF em requisições AJAX
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });
+
+        // DataTables por padrão em pt-br
+        $.extend(true, $.fn.dataTable.defaults, {
+            "language": {
+                "url": '{{ asset('vendor/datatables/js/Portuguese.json') }}'
+            },
+        });
     });
 </script>
 
