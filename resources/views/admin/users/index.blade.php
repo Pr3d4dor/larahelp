@@ -48,12 +48,6 @@
                 </tbody>
             </table>
         </div>
-        <!-- /.box-body -->
-{{--        <div class="box-footer">--}}
-{{--            <div class="row align-items-center justify-content-center">--}}
-{{--                {{ $users->links() }}--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
 @stop
 
