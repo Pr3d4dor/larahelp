@@ -185,6 +185,12 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'active' => ['admin/users', 'admin/users/*']
         ],
+        [
+            'text' => 'Categorias',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fas fa-fw fa-tag',
+            'active' => ['admin/categories', 'admin/categories/*']
+        ],
     ],
 
     /*
