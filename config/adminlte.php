@@ -191,6 +191,12 @@ return [
             'icon' => 'fas fa-fw fa-tag',
             'active' => ['admin/categories', 'admin/categories/*']
         ],
+        [
+            'text' => 'Tags',
+            'route'  => 'admin.tags.index',
+            'icon' => 'fas fa-fw fa-tag',
+            'active' => ['admin/tags', 'admin/tags/*']
+        ],
     ],
 
     /*
