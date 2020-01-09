@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Categorias')
+@section('title', 'Tags')
 
 @section('content_header')
     <div class="p-2">
         <div class="float-left">
-            <h2>Categorias</h2>
+            <h2>Tags</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.categories.create') }}">Cadastrar Categoria</a>
+            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.tags.create') }}">Cadastrar Tag</a>
         </div>
     </div>
 @stop
@@ -27,19 +27,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($categories as $category)
+                @foreach ($tags as $tag)
                     <tr class="text-center">
-                        <td>{{ $category->getKey() }}</td>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->slug }}</td>
+                        <td>{{ $tag->getKey() }}</td>
+                        <td>{{ $tag->name }}</td>
+                        <td>{{ $tag->slug }}</td>
                         <td>
-                            <a class="btn btn-xs btn-primary" href="{{ route('admin.categories.show', $category->id) }}">
+                            <a class="btn btn-xs btn-primary" href="{{ route('admin.tags.show', $tag->id) }}">
                                 Visualizar
                             </a>
-                            <a class="btn btn-xs btn-warning" href="{{ route('admin.categories.edit', $category->id) }}">
+                            <a class="btn btn-xs btn-warning" href="{{ route('admin.tags.edit', $tag->id) }}">
                                 Editar
                             </a>
-                            <button type="button" class="btn btn-xs btn-danger category-destroy" data-id="{{ $category->id }}">
+                            <button type="button" class="btn btn-xs btn-danger tag-destroy" data-id="{{ $tag->id }}">
                                 Excluir
                             </button>
                         </td>
@@ -63,10 +63,10 @@
                 ]
             });
 
-            $('.category-destroy').on('click', function () {
-                var categoryId = $(this).data('id');
+            $('.tag-destroy').on('click', function () {
+                var tagId = $(this).data('id');
                 Swal.fire({
-                    title: 'Confirma a exclusão da categoria?',
+                    title: 'Confirma a exclusão da tag?',
                     confirmButtonText: 'Confirmar',
                     cancelButtonText: 'Cancelar',
                     showCancelButton: true,
@@ -78,12 +78,12 @@
                         }
 
                         $.ajax({
-                            url: '{{ route('admin.categories.destroy', '_category') }}'.replace('_category', categoryId),
+                            url: '{{ route('admin.tags.destroy', '_tag') }}'.replace('_tag', tagId),
                             method: 'DELETE',
                             success: function (xhr) {
                                 Swal.fire({
                                     icon: 'success',
-                                    title: 'Categoria deletada com sucesso!',
+                                    title: 'Tag deletada com sucesso!',
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
@@ -94,7 +94,7 @@
                             error: function (xhr) {
                                 Swal.fire({
                                     icon: 'error',
-                                    title: 'Falha ao deletar categoria!',
+                                    title: 'Falha ao deletar tag!',
                                     showConfirmButton: true,
                                     timer: 1500
                                 });

@@ -73,7 +73,7 @@
                  showCloseButton: true
              })
              .then((confirm) => {
-                 if (!confirm) {
+                 if (!confirm.value) {
                      return;
                  }
 

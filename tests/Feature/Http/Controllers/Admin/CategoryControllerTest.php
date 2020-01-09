@@ -12,7 +12,7 @@ class CategoryControllerTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_categories_list()
+    public function it_displays_categories_list()
     {
         $user = factory(User::class)->create();
 
