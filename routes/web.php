@@ -25,12 +25,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Dashboard
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
-    // Users
+    // Usuários
     Route::resource('users', 'UserController');
 
-    // Categories
+    // Categorias
     Route::resource('categories', 'CategoryController');
 
     // Tags
     Route::resource('tags', 'TagController');
+
+    // Artigos
+    Route::resource('articles', 'ArticleController');
 });
