@@ -203,6 +203,18 @@ return [
             'icon' => 'fas fa-fw fa-newspaper',
             'active' => ['admin/articles', 'admin/articles/*']
         ],
+        [
+            'text' => 'Perguntas Frequentes',
+            'icon' => 'fas fa-fw fa-question',
+            'submenu' => [
+                [
+                    'text' => 'Categorias',
+                    'route'  => 'admin.faq_categories.index',
+                    'icon' => 'fas fa-fw fa-tag',
+                    'active' => ['admin/faq_categories', 'admin/faq_categories/*']
+                ]
+            ]
+        ]
     ],
 
     /*
