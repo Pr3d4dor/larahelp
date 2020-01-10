@@ -197,6 +197,12 @@ return [
             'icon' => 'fas fa-fw fa-tag',
             'active' => ['admin/tags', 'admin/tags/*']
         ],
+        [
+            'text' => 'Artigos',
+            'route'  => 'admin.articles.index',
+            'icon' => 'fas fa-fw fa-newspaper',
+            'active' => ['admin/articles', 'admin/articles/*']
+        ],
     ],
 
     /*
