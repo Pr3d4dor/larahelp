@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             TagTableSeeder::class,
             ArticleTableSeeder::class,
             FaqCategoriesTableSeeder::class,
+            FaqQuestionTableSeeder::class,
         ]);
     }
 }
