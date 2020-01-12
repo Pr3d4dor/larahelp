@@ -212,6 +212,12 @@ return [
                     'route'  => 'admin.faq_categories.index',
                     'icon' => 'fas fa-fw fa-tag',
                     'active' => ['admin/faq_categories', 'admin/faq_categories/*']
+                ],
+                [
+                    'text' => 'Perguntas',
+                    'route'  => 'admin.faq_questions.index',
+                    'icon' => 'fas fa-fw fa-question',
+                    'active' => ['admin/faq_questions', 'admin/faq_questions/*']
                 ]
             ]
         ]
