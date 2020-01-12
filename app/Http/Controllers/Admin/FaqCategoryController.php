@@ -9,7 +9,7 @@ use App\Models\FaqCategory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class FaqCategoriesController extends Controller
+class FaqCategoryController extends Controller
 {
     public function index()
     {

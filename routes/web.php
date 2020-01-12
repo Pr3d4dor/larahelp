@@ -38,5 +38,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('articles', 'ArticleController');
 
     // Categorias de Perguntas Frequentes
-    Route::resource('faq_categories', 'FaqCategoriesController');
+    Route::resource('faq_categories', 'FaqCategoryController');
+
+    // Questoes de Perguntas Frequentes
+    Route::resource('faq_questions', 'FaqQuestionController');
 });
