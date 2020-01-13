@@ -1,80 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- Title -->
+    <title>@yield('title')</title>
+
+    <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{  asset('docsui/favicon.png') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!--  Meta tags -->
+    <meta name="keywords" content="documentation template, help desk, open source, free template, freebies, bootstrap 4, bootstrap4">
+    <meta name="description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Schema.org -->
+    <meta itemprop="name" content="Documentation Help Desk by Htmlstream">
+    <meta itemprop="description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
+    <meta itemprop="image" content="docs-ui-kit-thumbnail.jpg">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="product">
+    <meta name="twitter:site" content="@htmlstream">
+    <meta name="twitter:title" content="Documentation Help Desk by Htmlstream">
+    <meta name="twitter:description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
+    <meta name="twitter:creator" content="@htmlstream">
+    <meta name="twitter:image" content="docs-ui-kit-thumbnail.jpg">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Documentation Help Desk by Htmlstream">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://htmlstream.com/preview/docs-ui-kit/index.html">
+    <meta property="og:image" content="docs-ui-kit-thumbnail.jpg">
+    <meta property="og:description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
+    <meta property="og:site_name" content="Htmlstream">
+
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{{ asset('docsui/assets/vendor/font-awesome/css/fontawesome-all.min.css') }}">
+
+    <!-- CSS Template -->
+    <link rel="stylesheet" href="{{ asset('docsui/assets/css/theme.css') }}">
+
+    <!-- CSS Demo -->
+    <link rel="stylesheet" href="{{ asset('docsui/assets/css/demo.css') }}">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- Header -->
+    @include('partials.header')
+    <!-- End Header -->
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+    <!-- Promo Section -->
+    @yield('promo')
+    <!-- End Promo Section -->
 
-                    </ul>
+    <main>
+        @yield('content')
+    </main>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+    @include('partials.footer')
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+    <!-- Go to Top -->
+    <a class="js-go-to duik-go-to" href="javascript:;">
+        <span class="fa fa-arrow-up duik-go-to__inner"></span>
+    </a>
+    <!-- End Go to Top -->
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- JS Global Compulsory -->
+    <script src="{{ asset('docsui/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('docsui/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
+    <script src="{{ asset('docsui/assets/vendor/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('docsui/assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <!-- JS -->
+    <script src="{{ asset('docsui/assets/js/main.js') }}"></script>
 </body>
 </html>
