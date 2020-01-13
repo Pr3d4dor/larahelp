@@ -27,10 +27,9 @@
         <div class="row">
             <div class="col-lg-8 mb-11 mb-lg-4 pr-lg-6">
                 <h2>Sumário</h2>
-                {{ $article->summary }}
-
+                {!! $article->summary !!}
                 <h2 class="mt-4">Conteúdo</h2>
-                {{ $article->content }}
+                {!! $article->content !!}
             </div>
 
             @include('partials.sidebar')

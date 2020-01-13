@@ -36,7 +36,7 @@
                         <td>{{ $article->getKey() }}</td>
                         <td>{{ $article->title }}</td>
                         <td>{{ $article->slug }}
-                        <td>{{ $article->summary }}</td>
+                        <td>{!! $article->summary !!}</td>
                         <td>
                             <span class="badge badge-secondary">{{ $article->category->name }}</span>
                         </td>

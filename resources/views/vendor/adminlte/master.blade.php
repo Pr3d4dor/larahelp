@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @endif
 
+    <!-- Trumbowyg -->
+    <link rel="stylesheet" href="{{ asset('vendor/trumbowyg/ui/trumbowyg.min.css') }}">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
@@ -35,6 +38,9 @@
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+
+<script src="{{ asset('vendor/trumbowyg/trumbowyg.min.js') }}"></script>
+<script src="{{ asset('vendor/trumbowyg/langs/pt_br.min.js') }}"></script>
 
 <script>
     $(function() {
@@ -71,6 +77,11 @@
 
             return str;
         }
+
+        $('.editor').trumbowyg({
+            autogrow: true,
+            lang: 'pt_br'
+        });
     });
 </script>
 

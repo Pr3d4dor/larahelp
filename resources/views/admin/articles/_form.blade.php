@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label for="summary">Sumário</label>
                 <div class="input-group">
-                    <textarea class="form-control {{ $errors->has('summary') ? 'is-invalid' : '' }}" id="summary"  name="summary" rows="5" form="form">{{ $article->summary ? $article->summary : old('summary')}}</textarea>
+                    <textarea class="form-control editor {{ $errors->has('summary') ? 'is-invalid' : '' }}" id="summary"  name="summary" rows="5" form="form">{{ $article->summary ? $article->summary : old('summary')}}</textarea>
                     @if ($errors->has('summary'))
                         <div class="invalid-feedback">
                             {{ $errors->first('summary') }}
@@ -47,7 +47,7 @@
             <div class="form-group">
                 <label for="content">Conteúdo</label>
                 <div class="input-group">
-                    <textarea class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" id="content" name="content" rows="5" form="form">{{ $article->content ? $article->content : old('content') }}</textarea>
+                    <textarea class="form-control editor {{ $errors->has('content') ? 'is-invalid' : '' }}" id="content" name="content" rows="5" form="form">{{ $article->content ? $article->content : old('content') }}</textarea>
                     @if ($errors->has('content'))
                         <div class="invalid-feedback">
                             {{ $errors->first('content') }}
