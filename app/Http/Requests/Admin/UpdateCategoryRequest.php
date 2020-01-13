@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\SlugRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Request;
 
@@ -26,7 +27,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:5',
-            'slug' => 'required|string|min:5|unique:categories,slug,' . $this->route('category')->getKey(),
+            'slug' => ['required', 'string', 'min:5', 'unique:categories,slug,' . $this->route('category')->getKey()],
         ];
     }
 }

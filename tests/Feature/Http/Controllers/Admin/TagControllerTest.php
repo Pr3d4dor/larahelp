@@ -122,13 +122,13 @@ class TagControllerTest extends TestCase
             'tag' => $tag->getKey(),
         ]), [
             'name' => 'Tag name',
-            'slug' => 'tag_name',
+            'slug' => 'tag-name',
         ]);
 
         $response->assertStatus(302);
         $response->assertRedirect(route('admin.tags.index'));
         $this->assertEquals('Tag name', $tag->fresh()->name);
-        $this->assertEquals('tag_name', $tag->fresh()->slug);
+        $this->assertEquals('tag-name', $tag->fresh()->slug);
     }
 
     /** @test */

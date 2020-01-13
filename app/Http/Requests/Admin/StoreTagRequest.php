@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\SlugRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreTagRequest extends FormRequest
@@ -25,7 +26,7 @@ class StoreTagRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:5',
-            'slug' => 'required|string|min:5|unique:tags,slug',
+            'slug' => ['required', 'string', 'min:5', 'unique:tags,slug', new SlugRule()],
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\SlugRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreArticleRequest extends FormRequest
@@ -25,7 +26,7 @@ class StoreArticleRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'slug' => 'required|unique:articles,slug',
+            'slug' => ['required', 'string', 'min:5', 'unique:articles,slug', new SlugRule()],
             'summary' => 'required',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',

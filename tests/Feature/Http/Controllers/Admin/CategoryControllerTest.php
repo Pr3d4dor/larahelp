@@ -122,13 +122,13 @@ class CategoryControllerTest extends TestCase
             'category' => $category->getKey(),
         ]), [
             'name' => 'Category name',
-            'slug' => 'category_name',
+            'slug' => 'category-name',
         ]);
 
         $response->assertStatus(302);
         $response->assertRedirect(route('admin.categories.index'));
         $this->assertEquals('Category name', $category->fresh()->name);
-        $this->assertEquals('category_name', $category->fresh()->slug);
+        $this->assertEquals('category-name', $category->fresh()->slug);
     }
 
     /** @test */

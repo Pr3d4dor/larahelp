@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\SlugRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateArticleRequest extends FormRequest
@@ -25,7 +26,7 @@ class UpdateArticleRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5',
-            'slug' => 'required|string|min:5|unique:articles,slug,' . $this->route('article')->getKey(),
+            'slug' => ['required', 'string', 'min:5', 'unique:articles,slug,' . $this->route('article')->getKey(), new SlugRule()],
             'summary' => 'required',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\SlugRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTagRequest extends FormRequest
@@ -25,7 +26,7 @@ class UpdateTagRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:5',
-            'slug' => 'required|string|min:5|unique:tags,slug,' . $this->route('tag')->getKey(),
+            'slug' => ['required', 'string', 'min:5', 'unique:tags,slug,' . $this->route('tag')->getKey(), new SlugRule()],
         ];
     }
 }
