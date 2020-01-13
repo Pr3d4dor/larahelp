@@ -16,4 +16,16 @@ class FaqCategory extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function faqQuestions()
+    {
+        return $this->hasMany(FaqQuestion::class, 'faq_category_id', 'id');
+    }
+
+    public function scopeActive($query)
+    {
+        if (request()->query('active')) {
+            $query->where('id', request()->query('active'));
+        }
+    }
 }
