@@ -5,7 +5,6 @@ namespace Tests\Feature\Http\Controllers\Admin;
 use App\Models\FaqCategory;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class FaqCategoryControllerTest extends TestCase

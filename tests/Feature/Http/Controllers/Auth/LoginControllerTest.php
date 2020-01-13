@@ -3,9 +3,8 @@
 namespace Tests\Feature\Http\Controllers\Auth;
 
 use App\Models\User;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {

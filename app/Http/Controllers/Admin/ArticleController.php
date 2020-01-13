@@ -9,7 +9,6 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
@@ -45,7 +44,6 @@ class ArticleController extends Controller
 
         return redirect(route('admin.articles.index'))->with(['alert-success' => 'Artigo criado com sucesso!']);
     }
-
 
     public function show(Article $article)
     {

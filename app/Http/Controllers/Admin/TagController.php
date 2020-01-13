@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreTagRequest;
 use App\Http\Requests\Admin\UpdateTagRequest;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use App\Models\Tag;
+use Illuminate\Http\JsonResponse;
 
 class TagController extends Controller
 {

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\FaqCategory;
-use App\Models\FaqQuestion;
-use Illuminate\Http\Request;
 
 class FaqCategoryController extends Controller
 {

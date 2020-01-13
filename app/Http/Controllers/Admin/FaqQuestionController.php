@@ -8,7 +8,6 @@ use App\Http\Requests\Admin\UpdateFaqQuestionRequest;
 use App\Models\FaqCategory;
 use App\Models\FaqQuestion;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class FaqQuestionController extends Controller
 {

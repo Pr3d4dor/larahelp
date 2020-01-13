@@ -7,7 +7,6 @@ use App\Http\Requests\Admin\StoreFaqCategoryRequest;
 use App\Http\Requests\Admin\UpdateFaqCategoryRequest;
 use App\Models\FaqCategory;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class FaqCategoryController extends Controller
 {
