@@ -17,9 +17,8 @@ Auth::routes([
     'reset' => true,
 ]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/faq_categories', 'FaqCategoryController@index')->name('faq_category.index');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     // Dashboard
