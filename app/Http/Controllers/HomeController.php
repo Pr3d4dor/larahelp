@@ -17,7 +17,7 @@ class HomeController extends Controller
             ->limit(6)
             ->get(['name']);
 
-        $articles = Article::orderBy('view_count', 'DESC')->limit(4)->get(['title', 'created_at']);
+        $articles = Article::orderBy('view_count', 'DESC')->limit(4)->get(['title', 'slug','created_at']);
 
         $popularCategories = Category::with(['articles' => function ($query) {
             $query->orderBy('view_count', 'desc');
