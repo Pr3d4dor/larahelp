@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +33,19 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+
+        Route::bind('article', function ($value) {
+            return Article::where('id', $value)->orWhere('slug', $value)->first() ?? abort(404);
+        });
+
+        Route::bind('category', function ($value) {
+            return Category::where('id', $value)->orWhere('slug', $value)->first() ?? abort(404);
+        });
+
+        Route::bind('tag', function ($value) {
+            return Tag::where('id', $value)->orWhere('slug', $value)->first() ?? abort(404);
+        });
     }
 
     /**

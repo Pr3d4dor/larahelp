@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use SlugTrait;
-
     public $table = 'articles';
 
     protected $dates = [
