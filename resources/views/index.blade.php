@@ -32,18 +32,8 @@
             </div>
         </div>
 
-        <!-- SVG BG -->
-        <svg class="position-absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 323" enable-background="new 0 0 1920 323" xml:space="preserve">
-          <polygon fill="#ffffff" style="fill-opacity: .05;" points="-0.5,322.5 -0.5,121.5 658.3,212.3 "></polygon>
-            <polygon fill="#ffffff" style="fill-opacity: .1;" points="-2,323 1920,323 1920,-1 "></polygon>
-        </svg>
-        <!-- End SVG BG -->
-
-        <!-- SVG BG Separator -->
-        <svg class="position-absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 300">
-            <path id="Path_1" fill="#fff" data-name="Path 1" d="M0,1081.586H1920v-300Z" transform="translate(0 -781.586)"/>
-        </svg>
-        <!-- SVG BG Separator -->
+        @include('partials.background')
+        @include('partials.background-separator')
     </section>
 @endsection
 
@@ -77,11 +67,11 @@
     <div class="container">
         <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
             <h2 class="h3 text-center">Artigos populares</h2>
-            <p>Comece aqui para encontrar as melhores respostas possíveis de nossos especialistas.</p>
+            <p>Começe aqui para encontrar as melhores respostas possíveis de nossos especialistas.</p>
         </div>
 
         @forelse($articles as $article)
-            <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" href="#">
+            <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" href="{{ route('articles.show', ['article' => $article->slug ]) }}">
                 <div class="col-sm">
                     {{ $article->title }}
                 </div>
@@ -94,7 +84,7 @@
         @endforelse
 
         <div class="text-center mt-5">
-            <a class="btn btn-sm btn-outline-primary" href="#">Ver Todos os Artigos<i class="fas fa-angle-right ml-2"></i></a>
+            <a class="btn btn-sm btn-outline-primary" href="{{ route('articles.index') }}">Ver Todos os Artigos<i class="fas fa-angle-right ml-2"></i></a>
         </div>
     </div>
 </section>

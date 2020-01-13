@@ -2,7 +2,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark gradient-primary position-absolute left-0 right-0 flex-nowrap z-index-3">
         <div class="container">
-            <a class="navbar-brand" href="home-page-1.html">LaraHelp</a>
+            <a class="navbar-brand" href="{{ route('home.index') }}">LaraHelp</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
                         <a class="nav-link px-0" href="home-page-1.html">Artigos</a>
                     </li>
                     <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
-                        <a class="nav-link px-0" href="{{ route('faq_category.index') }}">Perguntas Frequentes (FAQ)</a>
+                        <a class="nav-link px-0" href="{{ route('faq_categories.index') }}">Perguntas Frequentes (FAQ)</a>
                     </li>
                     <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
                         <a class="nav-link px-0" href="{{ route('login') }}">Admin</a>
