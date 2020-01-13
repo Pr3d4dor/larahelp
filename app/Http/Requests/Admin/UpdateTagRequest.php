@@ -25,7 +25,7 @@ class UpdateTagRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:5',
-            'slug' => 'required|string|min:5|unique:tags,slug',
+            'slug' => 'required|string|min:5|unique:tags,slug,' . $this->route('tag')->getKey(),
         ];
     }
 }

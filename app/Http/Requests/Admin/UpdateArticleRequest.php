@@ -24,8 +24,8 @@ class UpdateArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'slug' => 'required|unique:articles,slug',
+            'title' => 'required|min:5',
+            'slug' => 'required|string|min:5|unique:articles,slug,' . $this->route('article')->getKey(),
             'summary' => 'required',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
