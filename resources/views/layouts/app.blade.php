@@ -47,6 +47,9 @@
 
     <!-- CSS Demo -->
     <link rel="stylesheet" href="{{ asset('docsui/assets/css/demo.css') }}">
+
+    <!-- select2 -->
+    <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}">
 </head>
 <body>
     <!-- Header -->
@@ -74,6 +77,16 @@
     <script src="{{ asset('docsui/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
     <script src="{{ asset('docsui/assets/vendor/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('docsui/assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- select2 -->
+    <script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
+
+    <script>
+        $(function() {
+            // Aplicar select2
+            $('.select2').select2();
+        });
+    </script>
 
     <!-- JS -->
     <script src="{{ asset('docsui/assets/js/main.js') }}"></script>

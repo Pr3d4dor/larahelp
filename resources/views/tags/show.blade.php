@@ -1,18 +1,19 @@
 @extends('layouts.app')
 
-@section('title', 'LaraHelp - Artigos')
+@section('title', 'LaraHelp - ' . $tag->name)
 
 @section('promo')
     <section class="duik-promo bg-primary">
         <div class="container duik-promo-container">
             <div class="d-flex position-relative mh-25rem pt-11 py-6">
                 <div class="align-self-center">
-                    <h1 class="text-white font-weight-light mb-3">Artigos</h1>
+                    <h1 class="text-white font-weight-light mb-3">Artigos com a Tag: {{ $tag->name }}</h1>
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Artigos</li>
+                            <li class="breadcrumb-item"><a href="#">Tags</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ $tag->name }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -28,7 +29,7 @@
         <div class="row">
             <div class="col-lg-8 pr-lg-6">
                 <div>
-                    <form method="GET" action="{{ route('articles.index') }}" class="mb-3">
+                    <form method="GET" action="{{ route('tags.show', $tag->slug) }}" class="mb-3">
                         <div class="form-group input-group">
                             <input name="search" class="form-control border-0 bg-light" type="search" placeholder="Buscar" value="{{ request()->query('search') ?? '' }}">
                             <span class="input-group-append p-0">
@@ -42,14 +43,6 @@
                                     <option value="">Selecione uma categoria</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->getKey() }}" {{ request()->get('category_id') == $category->getKey() ? 'selected' : '' }}>{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="col-6">
-                                <select class="form-control select2" name="tags[]" id="tags" multiple>
-                                    @foreach($tags as $tag)
-                                        <option value="{{ $tag->getKey() }}" {{ in_array($tag->getKey(), request()->get('tags') ?? []) ? 'selected' : '' }}>{{ $tag->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

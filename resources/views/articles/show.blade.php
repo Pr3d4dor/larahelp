@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'LaraHelp - ' . $article->title)
+
 @section('promo')
     <section class="duik-promo bg-primary">
         <div class="container duik-promo-container">

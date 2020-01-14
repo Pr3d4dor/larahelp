@@ -14,7 +14,7 @@
                         <a class="nav-link px-0" href="{{ route('home.index') }}">Home</a>
                     </li>
                     <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
-                        <a class="nav-link px-0" href="home-page-1.html">Artigos</a>
+                        <a class="nav-link px-0" href="{{ route('articles.index') }}">Artigos</a>
                     </li>
                     <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
                         <a class="nav-link px-0" href="{{ route('faq_categories.index') }}">Perguntas Frequentes (FAQ)</a>

@@ -5,9 +5,9 @@
         </div>
         <div class="card-body">
             <ul class="list-line mb-0">
-                <li class="mb-3"><a class="link-muted" href="#">Guarantee?</a></li>
-                <li class="mb-3"><a class="link-muted" href="#">Do you have any built-in caching?</a></li>
-                <li class="mb-3"><a class="link-muted" href="#">Can I add/upgrade my plan at any time?</a></li>
+                @foreach($popularArticles as $article)
+                    <li class="mb-3"><a class="link-muted" href="{{ route('articles.show', $article->slug) }}">{{ $article->title }}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>
@@ -18,9 +18,9 @@
         </div>
         <div class="card-body">
             <ul class="list-line mb-0">
-                <li class="mb-3"><a class="link-muted" href="#">Guarantee?</a></li>
-                <li class="mb-3"><a class="link-muted" href="#">Do you have any built-in caching?</a></li>
-                <li class="mb-3"><a class="link-muted" href="#">Can I add/upgrade my plan at any time?</a></li>
+                @foreach($latestArticles as $article)
+                    <li class="mb-3"><a class="link-muted" href="{{ route('articles.show', $article->slug) }}">{{ $article->title }}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>
@@ -30,9 +30,11 @@
             <h4 class="h5 mb-3">Tags Populares</h4>
         </div>
         <div class="card-body">
-            <a href="#">
-                <span class="badge badge-secondary">Tag 1</span>
-            </a>
+            @foreach($popularTags as $tag)
+                <a href="{{ route('tags.show', $tag->slug) }}">
+                    <span class="badge badge-secondary">{{ $tag->name }}</span>
+                </a>
+            @endforeach
         </div>
     </div>
 </div>

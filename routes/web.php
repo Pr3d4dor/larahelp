@@ -21,6 +21,8 @@ Route::get('/', 'HomeController@index')->name('home.index');
 
 Route::resource('faq_categories', 'FaqCategoryController')->only(['index']);
 Route::resource('articles', 'ArticleController')->only(['index', 'show']);
+Route::resource('tags', 'TagController')->only(['show']);
+Route::resource('categories', 'CategoryController')->only(['show']);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     // Dashboard
