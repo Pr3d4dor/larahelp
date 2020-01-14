@@ -44,3 +44,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Questoes de Perguntas Frequentes
     Route::resource('faq_questions', 'FaqQuestionController');
 });
+
+Route::get('{any}', 'ErrorController@index')->where('any', '.*');
