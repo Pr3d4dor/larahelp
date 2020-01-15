@@ -27,7 +27,6 @@ class SlugRuleTest extends TestCase
     public function it_accepts_valid_slugs($slug)
     {
         $this->assertEquals(1, $this->rule->passes('test', $slug));
-
     }
 
     /**
