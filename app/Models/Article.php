@@ -39,7 +39,8 @@ class Article extends Model
     {
         if ($request->has('search') && !is_null($request->get('search'))) {
             $query->where('summary', 'LIKE', '%' . $request->get('search') . '%')
-                ->orWhere('content', 'LIKE', '%' . $request->get('search') . '%');
+                ->orWhere('content', 'LIKE', '%' . $request->get('search') . '%')
+                ->orWhere('title', 'LIKE', '%' . $request->get('search') . '%');
         }
 
         if ($request->has('category_id') && !is_null($request->get('category_id'))) {
