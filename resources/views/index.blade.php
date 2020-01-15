@@ -12,20 +12,20 @@
                     <form class="input-group mb-3" method="GET" action="{{ route('articles.index') }}">
                         <input name="search" class="form-control border-0" type="search" placeholder="Buscar">
                         <span class="input-group-append p-0">
-                            <button class="btn text-muted" type="submit"><i class="fas fa-search"></i></button>
+                            <button name="execute_search" class="btn text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </span>
                     </form>
 
                     @if(count($popularCategories) > 0)
                         <p class="font-weight-light small text-left">
                             <span class="mr-2">Categorias Populares:</span>
-                        @foreach($popularCategories as $category)
-                            @if($loop->last)
-                                <a class="text-white mr-1" href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a>
-                            @else
-                                <a class="text-white mr-1" href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a>,
-                            @endif
-                        @endforeach
+                            @foreach($popularCategories as $category)
+                                @if($loop->last)
+                                    <a class="text-white mr-1" href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a>
+                                @else
+                                    <a class="text-white mr-1" href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a>,
+                                @endif
+                            @endforeach
                         </p>
                     @endif
                 </div>
