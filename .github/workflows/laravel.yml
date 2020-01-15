@@ -5,14 +5,13 @@ on: [push]
 jobs:
   laravel-tests:
     runs-on: ubuntu-latest
+    container: docker://zaherg/laravel-dusk:latest
     steps:
     - uses: actions/checkout@v1
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-    - name: Install Laravel Dusk
-      run: php artisan dusk:chrome-driver
     - name: Generate key
       run: php artisan key:generate
     - name: Create Database
@@ -28,4 +27,8 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan dusk
+      run: |
+        php artisan dusk:chrome-driver
+        nohup bash -c './vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &'
+        nohup bash -c 'php artisan serve > /dev/null 2>&1 &'
+        php artisan dusk
