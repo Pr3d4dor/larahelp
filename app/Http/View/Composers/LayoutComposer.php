@@ -38,6 +38,9 @@ class LayoutComposer
 
         $latestArticles = Article::orderBy('id', 'DESC')->limit(3)->get();
 
-        $view->with(compact('popularTags', 'popularCategories', 'popularArticles', 'latestArticles'));
+        $view->with('popularArticles', $popularArticles);
+        $view->with('popularTags', $popularTags);
+        $view->with('popularCategories', $popularCategories);
+        $view->with('latestArticles', $latestArticles);
     }
 }
