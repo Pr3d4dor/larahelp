@@ -123,4 +123,34 @@ class ArticleControllerTest extends TestCase
                 !in_array($articleTwo->getKey(), $articleIds);
         });
     }
+
+    /** @test */
+    public function it_can_display_an_article()
+    {
+        $article = factory(Article::class)->create();
+
+        $response = $this->get(route('articles.show', [
+            'article' => $article->getKey()
+        ]));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('articles.show');
+        $response->assertViewHas('article', function ($loadedArticle) use ($article) {
+            return $loadedArticle->getKey() === $article->getKey();
+        });
+    }
+
+    /** @test */
+    public function it_increment_article_view_count_on_show()
+    {
+        $article = factory(Article::class)->create();
+
+        $response = $this->get(route('articles.show', [
+            'article' => $article->getKey()
+        ]));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('articles.show');
+        $this->assertEquals($article->view_count + 1, $article->fresh()->view_count);
+    }
 }
