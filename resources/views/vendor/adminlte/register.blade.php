@@ -30,7 +30,7 @@
             <div class="card-body register-card-body">
             <p class="login-box-msg">{{ __('adminlte::adminlte.register_message') }}</p>
             <form action="{{ $register_url }}" method="post">
-                {{ csrf_field() }}
+                @csrf
 
                 <div class="input-group mb-3">
                     <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}"

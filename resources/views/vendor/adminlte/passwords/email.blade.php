@@ -31,7 +31,7 @@
                     </div>
                 @endif
                 <form action="{{ $password_email_url }}" method="post">
-                    {{ csrf_field() }}
+                    @csrf
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
                         <div class="input-group-append">
