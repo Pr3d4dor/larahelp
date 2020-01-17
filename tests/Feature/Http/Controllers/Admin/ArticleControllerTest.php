@@ -25,6 +25,22 @@ class ArticleControllerTest extends TestCase
     }
 
     /** @test */
+    public function it_displays_a_specific_article()
+    {
+        $user = factory(User::class)->create();
+
+        $article = factory(Article::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.articles.show', $article->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.articles.show');
+        $response->assertViewHas('article', function ($loadedArticle) use ($article) {
+            return $article->getKey() === $loadedArticle->getKey();
+        });
+    }
+
+    /** @test */
     public function it_displays_article_create_form()
     {
         $user = factory(User::class)->create();

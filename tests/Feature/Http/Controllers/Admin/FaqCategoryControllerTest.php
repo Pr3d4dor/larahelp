@@ -23,6 +23,22 @@ class FaqCategoryControllerTest extends TestCase
     }
 
     /** @test */
+    public function it_displays_a_specific_faq_category()
+    {
+        $user = factory(User::class)->create();
+
+        $faqCategory = factory(FaqCategory::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.faq_categories.show', $faqCategory->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.faq_categories.show');
+        $response->assertViewHas('faqCategory', function ($loadedFaqCategory) use ($faqCategory) {
+            return $loadedFaqCategory->getKey() === $faqCategory->getKey();
+        });
+    }
+
+    /** @test */
     public function it_displays_validation_errors_on_create()
     {
         $user = factory(User::class)->create();

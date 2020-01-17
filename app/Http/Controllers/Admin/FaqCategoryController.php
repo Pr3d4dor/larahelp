@@ -35,7 +35,7 @@ class FaqCategoryController extends Controller
 
     public function show(FaqCategory $faqCategory)
     {
-        return view('admin.faq_questions.show', compact('faqCategory'));
+        return view('admin.faq_categories.show', compact('faqCategory'));
     }
 
     public function edit(FaqCategory $faqCategory)

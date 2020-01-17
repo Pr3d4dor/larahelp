@@ -24,6 +24,22 @@ class FaqQuestionControllerTest extends TestCase
     }
 
     /** @test */
+    public function it_displays_a_specific_faq_question()
+    {
+        $user = factory(User::class)->create();
+
+        $faqQuestion = factory(FaqQuestion::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.faq_questions.show', $faqQuestion->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.faq_questions.show');
+        $response->assertViewHas('faqQuestion', function ($loadedFaqQuestion) use ($faqQuestion) {
+            return $loadedFaqQuestion->getKey() === $faqQuestion->getKey();
+        });
+    }
+
+    /** @test */
     public function it_displays_faq_question_create_form()
     {
         $user = factory(User::class)->create();

@@ -23,6 +23,22 @@ class TagControllerTest extends TestCase
     }
 
     /** @test */
+    public function it_displays_a_specific_tag()
+    {
+        $user = factory(User::class)->create();
+
+        $tag = factory(Tag::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.tags.show', $tag->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.tags.show');
+        $response->assertViewHas('tag', function ($loadedTag) use ($tag) {
+            return $loadedTag->getKey() === $tag->getKey();
+        });
+    }
+
+    /** @test */
     public function it_displays_tag_create_form()
     {
         $user = factory(User::class)->create();

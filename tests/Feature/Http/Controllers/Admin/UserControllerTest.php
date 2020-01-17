@@ -22,7 +22,7 @@ class UserControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_display_a_specific_user()
+    public function it_displays_a_specific_user()
     {
         $user = factory(User::class)->create();
 
