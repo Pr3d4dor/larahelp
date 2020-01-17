@@ -50,7 +50,7 @@
                                             <i class="fas fa-angle-down accordion-control ml-auto text-primary"></i>
                                         </div>
 
-                                        <div id="collapseOne-{{ $faqQuestion->getKey() }}" class="collapse show" aria-labelledby="headingOne-{{ $faqQuestion->getKey() }}" data-parent="#accordionExample-{{ $faqCategory->getKey() }}">
+                                        <div id="collapseOne-{{ $faqQuestion->getKey() }}" class="collapse {{ $loop->first ? 'show' : '' }}" aria-labelledby="headingOne-{{ $faqQuestion->getKey() }}" data-parent="#accordionExample-{{ $faqCategory->getKey() }}">
                                             <div class="card-body">{{ $faqQuestion->answer }}</div>
                                         </div>
                                     </div>
