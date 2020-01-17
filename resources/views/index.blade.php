@@ -3,7 +3,7 @@
 @section('title', 'LaraHelp - Base de Conhecimento')
 
 @section('promo')
-    <section class="duik-promo gradient-primary text-center">
+    <section class="duik-promo bg-primary text-center">
         <div class="container duik-promo-container">
             <div class="d-flex justify-content-center position-relative mh-35rem pt-11 py-6">
                 <div class="w-md-75 w-lg-50 mt-10">
@@ -48,7 +48,7 @@
             @forelse($categories as $category)
                 <div class="col-md-6 mb-5">
                     <div class="media h-100 shadow rounded p-4">
-                        <i class="far fa-fw fa-dot-circle fa-3x text-secondary mr-4 mt-1"></i>
+                        <i class="far fa-fw fa-dot-circle fa-3x text-primary mr-4 mt-1"></i>
 
                         <div class="media-body">
                             <h5 class="mb-1"><a class="link-dark" href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a></h5>

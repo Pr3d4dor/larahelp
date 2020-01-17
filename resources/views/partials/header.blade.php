@@ -1,6 +1,6 @@
 <header class="duik-header">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark gradient-primary position-absolute left-0 right-0 flex-nowrap z-index-3">
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute left-0 right-0 flex-nowrap z-index-3">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home.index') }}">LaraHelp</a>
 
