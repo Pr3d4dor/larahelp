@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\View\Composers\LayoutComposer;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,5 +35,9 @@ class AppServiceProvider extends ServiceProvider
             'index',
             LayoutComposer::class
         );
+
+        Blade::directive('formatDate', function ($date) {
+            return "<?php echo ($date)->format('d/m/Y').'  '.($date)->timezone('America/Sao_Paulo')->format('H:i:s'); ?>";
+        });
     }
 }

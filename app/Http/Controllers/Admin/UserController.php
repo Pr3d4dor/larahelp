@@ -39,9 +39,9 @@ class UserController extends Controller
         return redirect(route('admin.users.index'))->with(['alert-success' => 'Usuário criado com sucesso!']);
     }
 
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('admin.users.show', compact('user'));
     }
 
     public function edit(User $user)

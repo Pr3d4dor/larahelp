@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="col-sm-2 text-sm-right text-muted small">
-                    {{ date('d/m/Y', strtotime($article->created_at)) }}
+                    @formatDate($article->created_at)
                 </div>
             </a>
         @empty

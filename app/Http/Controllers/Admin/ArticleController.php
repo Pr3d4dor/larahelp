@@ -47,7 +47,9 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        //
+        $article->load(['category', 'tags']);
+
+        return view('admin.articles.show', compact('article'));
     }
 
     public function edit(Article $article)

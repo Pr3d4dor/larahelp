@@ -38,7 +38,9 @@ class FaqQuestionController extends Controller
 
     public function show(FaqQuestion $faqQuestion)
     {
-        //
+        $faqQuestion->load('faqCategory');
+
+        return view('admin.faq_questions.show', compact('faqQuestion'));
     }
 
     public function edit(FaqQuestion $faqQuestion)

@@ -23,6 +23,22 @@ class CategoryControllerTest extends TestCase
     }
 
     /** @test */
+    public function it_can_display_a_specific_category()
+    {
+        $user = factory(User::class)->create();
+
+        $category = factory(Category::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.categories.show', $category->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.categories.show');
+        $response->assertViewHas('category', function ($loadedCategory) use ($category) {
+            return $loadedCategory->getKey() === $category->getKey();
+        });
+    }
+
+    /** @test */
     public function it_displays_category_create_form()
     {
         $user = factory(User::class)->create();

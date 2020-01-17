@@ -22,6 +22,20 @@ class UserControllerTest extends TestCase
     }
 
     /** @test */
+    public function it_can_display_a_specific_user()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.users.show', $user->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.users.show');
+        $response->assertViewHas('user', function ($loadedUser) use ($user) {
+            return $loadedUser->getKey() === $user->getKey();
+        });
+    }
+
+    /** @test */
     public function it_displays_user_create_form()
     {
         $user = factory(User::class)->create();

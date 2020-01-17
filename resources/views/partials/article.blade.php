@@ -16,10 +16,10 @@
 
         <div class="mt-4">
             <span>
-                <i class="fa fa-edit mr-1"></i><strong>Postado em:</strong> {{ date('d/m/Y H:s', strtotime($article->created_at)) }}
+                <i class="fa fa-edit mr-1"></i><strong>Postado em:</strong> @formatDate($article->created_at)
             </span>
             <span class="float-right">
-                <i class="fa fa-edit mr-1"></i><strong>Última atualização:</strong> {{ date('d/m/Y H:s', strtotime($article->updated_at)) }}
+                <i class="fa fa-edit mr-1"></i><strong>Última atualização:</strong> @formatDate($article->updated_at)
             </span>
         </div>
     </div>

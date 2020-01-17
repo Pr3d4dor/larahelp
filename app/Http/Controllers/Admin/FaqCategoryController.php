@@ -33,9 +33,9 @@ class FaqCategoryController extends Controller
         return redirect(route('admin.faq_categories.index'))->with(['alert-success' => 'Categoria de criada com sucesso!']);
     }
 
-    public function show($id)
+    public function show(FaqCategory $faqCategory)
     {
-        //
+        return view('admin.faq_questions.show', compact('faqCategory'));
     }
 
     public function edit(FaqCategory $faqCategory)

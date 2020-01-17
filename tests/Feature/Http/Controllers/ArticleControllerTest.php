@@ -4,6 +4,7 @@ namespace Tests\Feature\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -22,6 +23,22 @@ class ArticleControllerTest extends TestCase
         $response->assertViewIs('articles.index');
         $response->assertViewHas('articles', function ($articles) {
             return $articles->pluck('id')->toArray() === [1, 2, 3, 4, 5];
+        });
+    }
+
+    /** @test */
+    public function it_can_display_a_specific_article()
+    {
+        $user = factory(User::class)->create();
+
+        $article = factory(Article::class)->create();
+
+        $response = $this->actingAs($user)->get(route('admin.articles.show', $article->getKey()));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('admin.articles.show');
+        $response->assertViewHas('article', function ($loadedArticle) use ($article) {
+            return $article->getKey() === $loadedArticle->getKey();
         });
     }
 

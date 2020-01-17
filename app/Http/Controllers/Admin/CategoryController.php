@@ -33,9 +33,9 @@ class CategoryController extends Controller
         return redirect(route('admin.categories.index'))->with(['alert-success' => 'Categoria criada com sucesso!']);
     }
 
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return view('admin.categories.show', compact('category'));
     }
 
     public function edit(Category $category)

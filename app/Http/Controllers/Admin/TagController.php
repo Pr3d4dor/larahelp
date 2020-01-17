@@ -33,9 +33,9 @@ class TagController extends Controller
         return redirect(route('admin.tags.index'))->with(['alert-success' => 'Tag criada com sucesso!']);
     }
 
-    public function show($id)
+    public function show(Tag $tag)
     {
-        //
+        return view('admin.tags.show', compact('tag'));
     }
 
     public function edit(Tag $tag)
