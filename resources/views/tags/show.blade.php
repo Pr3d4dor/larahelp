@@ -37,10 +37,13 @@
                             </span>
                         </div>
 
-                        <div class="form-group input-group">
-                            <div class="col-6">
-                                <select class="form-control select2 mr-4" name="category_id" id="category_id">
-                                    <option value="">Selecione uma categoria</option>
+                        <div class="form-group input-group d-flex justify-content-between">
+                            <div class="w-45">
+                                <label for="category_id">
+                                    Categoria:
+                                </label>
+                                <select class="form-control select2" name="category_id" id="category_id">
+                                    <option value=""></option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->getKey() }}" {{ request()->get('category_id') == $category->getKey() ? 'selected' : '' }}>{{ $category->name }}</option>
                                     @endforeach

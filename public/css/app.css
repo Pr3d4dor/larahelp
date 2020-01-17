@@ -1,3 +1,23 @@
 .a-no-border, .a-no-border:hover, .a-no-border:focus {
     text-decoration: none;
 }
+
+.select2-container .select2-selection--single {
+    height: 2.3rem;
+}
+
+.select2-container .select2-selection--multiple {
+    height: 2.3rem;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+@media (max-width: 992px)
+{
+    .w-45
+    {
+        width: 100%;
+    }
+}

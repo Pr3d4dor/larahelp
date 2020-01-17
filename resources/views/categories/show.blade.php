@@ -38,7 +38,10 @@
                         </div>
 
                         <div class="form-group input-group">
-                            <div class="col-6">
+                            <div class="w-45">
+                                <label for="tags">
+                                    Tags:
+                                </label>
                                 <select class="form-control select2" name="tags[]" id="tags" multiple>
                                     @foreach($tags as $tag)
                                         <option value="{{ $tag->getKey() }}" {{ in_array($tag->getKey(), request()->get('tags') ?? []) ? 'selected' : '' }}>{{ $tag->name }}</option>
