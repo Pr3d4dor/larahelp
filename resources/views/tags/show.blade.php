@@ -11,8 +11,8 @@
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Tags</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
+                            <li class="breadcrumb-item">Tags</li>
                             <li class="breadcrumb-item active" aria-current="page">{{ $tag->name }}</li>
                         </ol>
                     </nav>
@@ -53,41 +53,7 @@
                 </div>
 
                 @forelse($articles as $article)
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <h3>{{ $article->title }}</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <span>
-                                    <i class="fa fa-folder mr-1"></i><strong>Categoria:</strong> {{ $article->category->name }}
-                                </span>
-                            </div>
-
-                            {!! $article->summary !!}
-
-                            <div class="mt-4">
-                                <span>
-                                    <i class="fa fa-edit mr-1"></i><strong>Postado em:</strong> {{ date('d/m/Y H:s', strtotime($article->created_at)) }}
-                                </span>
-                                <span class="float-right">
-                                    <i class="fa fa-edit mr-1"></i><strong>Última atualização:</strong> {{ date('d/m/Y H:s', strtotime($article->updated_at)) }}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div>
-                                <i class="fa fa-tags mr-1"></i><span>Tags: </span>
-                                @forelse($article->tags as $tag)
-                                    <span class="badge badge-secondary">{{ $tag->name }}</span>
-                                @empty
-                                    <span>Nenhuma.</span>
-                                @endforelse
-                            </div>
-                        </div>
-
-                        <a href="{{ route('articles.show', $article->slug) }}" class="stretched-link"></a>
-                    </div>
+                    @include('partials.article', $article)
                 @empty
                     <p>Nenhum artigo encontrado.</p>
                 @endforelse

@@ -50,6 +50,9 @@
 
     <!-- select2 -->
     <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <!-- Header -->

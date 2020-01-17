@@ -31,7 +31,7 @@
         </div>
         <div class="card-body">
             @foreach($popularTags as $tag)
-                <a href="{{ route('tags.show', $tag->slug) }}">
+                <a href="{{ route('tags.show', $tag->slug) }}" class="a-no-border">
                     <span class="badge badge-secondary">{{ $tag->name }}</span>
                 </a>
             @endforeach
