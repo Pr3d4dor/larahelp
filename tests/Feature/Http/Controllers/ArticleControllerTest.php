@@ -27,22 +27,6 @@ class ArticleControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_display_a_specific_article()
-    {
-        $user = factory(User::class)->create();
-
-        $article = factory(Article::class)->create();
-
-        $response = $this->actingAs($user)->get(route('admin.articles.show', $article->getKey()));
-
-        $response->assertStatus(200);
-        $response->assertViewIs('admin.articles.show');
-        $response->assertViewHas('article', function ($loadedArticle) use ($article) {
-            return $article->getKey() === $loadedArticle->getKey();
-        });
-    }
-
-    /** @test */
     public function it_can_search_an_article_by_title()
     {
         [$articleOne, $articleTwo] = factory(Article::class, 2)->create();
@@ -142,7 +126,7 @@ class ArticleControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_display_an_article()
+    public function it_displays_an_article()
     {
         $article = factory(Article::class)->create();
 
