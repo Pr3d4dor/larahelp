@@ -79,5 +79,9 @@ Para rodar os testes (Feature e Unitários) basta rodar:
 
 Para rodar os testes de navegador basta rodar:
 ```
+php artisan dusk:install
+```
+
+```
 php artisan dusk
 ```
