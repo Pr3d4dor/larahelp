@@ -21,11 +21,4 @@ class FaqCategory extends Model
     {
         return $this->hasMany(FaqQuestion::class, 'faq_category_id', 'id');
     }
-
-    public function scopeActive($query)
-    {
-        if (request()->query('active')) {
-            $query->where('id', request()->query('active'));
-        }
-    }
 }
