@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Http\View\Composers\LayoutComposer;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
