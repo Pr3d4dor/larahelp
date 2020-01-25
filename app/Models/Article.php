@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class Article extends Model
@@ -35,12 +36,14 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    public function scopeFilter($query, Request $request)
+    public function scopeFilter(Builder $query, Request $request)
     {
         if ($request->has('search') && !is_null($request->get('search'))) {
-            $query->where('summary', 'LIKE', '%' . $request->get('search') . '%')
-                ->orWhere('content', 'LIKE', '%' . $request->get('search') . '%')
-                ->orWhere('title', 'LIKE', '%' . $request->get('search') . '%');
+            $query->where(function (Builder $query) use ($request) {
+                $query->where('summary', 'LIKE', '%' . $request->get('search') . '%')
+                    ->orWhere('content', 'LIKE', '%' . $request->get('search') . '%')
+                    ->orWhere('title', 'LIKE', '%' . $request->get('search') . '%');
+            });
         }
 
         if ($request->has('category_id') && !is_null($request->get('category_id'))) {
