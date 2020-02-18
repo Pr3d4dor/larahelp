@@ -41,4 +41,19 @@ class LoginControllerTest extends TestCase
         $response->assertRedirect(route('admin.dashboard'));
         $this->assertAuthenticatedAs($user);
     }
+
+    /** @test */
+    public function it_logout_and_redirects_user()
+    {
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user);
+
+        $this->assertAuthenticatedAs($user);
+
+        $response = $this->post(route('logout'));
+
+        $response->assertRedirect(route('home.index'));
+        $this->assertFalse($this->isAuthenticated());
+    }
 }
