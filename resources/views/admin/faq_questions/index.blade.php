@@ -8,7 +8,7 @@
             <h2>Perguntas Frequentes</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.faq_questions.create') }}">Cadastrar Pergunta Frequente</a>
+            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.faq_questions.create') }}">Criar Pergunta Frequente</a>
         </div>
     </div>
 @stop

@@ -8,7 +8,7 @@
             <h2>Artigos</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.articles.create') }}">Cadastrar Artigo</a>
+            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.articles.create') }}">Criar Artigo</a>
         </div>
     </div>
 @stop

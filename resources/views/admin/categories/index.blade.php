@@ -8,7 +8,7 @@
             <h2>Categorias</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.categories.create') }}">Cadastrar Categoria</a>
+            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.categories.create') }}">Criar Categoria</a>
         </div>
     </div>
 @stop

@@ -8,7 +8,7 @@
             <h2>Tags</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.tags.create') }}">Cadastrar Tag</a>
+            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.tags.create') }}">Criar Tag</a>
         </div>
     </div>
 @stop

@@ -8,7 +8,7 @@
             <h2>Usuários</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.users.create') }}">Cadastrar usuário</a>
+            <a class="btn btn-xs btn-primary btn-" href="{{ route('admin.users.create') }}">Criar usuário</a>
         </div>
     </div>
 @stop
