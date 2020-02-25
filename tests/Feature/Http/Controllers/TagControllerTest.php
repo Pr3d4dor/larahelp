@@ -133,4 +133,29 @@ class TagControllerTest extends TestCase
                 !in_array($articleTwo->getKey(), $articleIds);
         });
     }
+
+    /** @test */
+    public function it_display_tag_list_with_tags_paginated()
+    {
+        factory(Tag::class, 15)->create();
+
+        $response = $this->get(route('tags.index'));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('tags.index');
+        $response->assertViewHas('tags', function ($tags) {
+            $tagIds = collect($tags->items())->pluck('id')->toArray();
+
+            return empty(array_diff([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], $tagIds));
+        });
+
+        $response = $this->get(route('tags.index', [
+            'page' => 2
+        ]));
+        $response->assertViewHas('tags', function ($tags) {
+            $tagIds = collect($tags->items())->pluck('id')->toArray();
+
+            return empty(array_diff([11, 12, 13, 14, 15], $tagIds));
+        });
+    }
 }
