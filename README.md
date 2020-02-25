@@ -72,6 +72,12 @@ Visite a aplicação no navegador e pode ser feito o login no painel admistrativ
 
 ## Testes
 
+Instalar PHP XDebug para poder gerar relatório de cobertura de código (opcional):
+```
+sudo apt get install php7.4-xdebug
+```
+**Atenção**: Instalar a versão de acordo com o php instalado em seu computador, por exemplo PHP 7.4.
+
 Para rodar os testes (Feature e Unitários) basta rodar:
 ```
 /vendor/bin/phpunit ou composer test
