@@ -12,7 +12,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light">
                             <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
-                            <li class="breadcrumb-item">Tags</li>
+                            <li class="breadcrumb-item"><a href="{{ route('tags.index') }}">Tags</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ $tag->name }}</li>
                         </ol>
                     </nav>
