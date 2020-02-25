@@ -17,6 +17,12 @@
                         <a class="nav-link px-0" href="{{ route('articles.index') }}">Artigos</a>
                     </li>
                     <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+                        <a class="nav-link px-0" href="{{ route('categories.index') }}">Categorias</a>
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+                        <a class="nav-link px-0" href="{{ route('tags.index') }}">Tags</a>
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
                         <a class="nav-link px-0" href="{{ route('faq_categories.index') }}">Perguntas Frequentes (FAQ)</a>
                     </li>
                     <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
