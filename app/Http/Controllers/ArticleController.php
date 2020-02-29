@@ -22,7 +22,7 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        $article->increment('view_count');
+        $article->handleSEOHeaders()->increment('view_count');
 
         return view('articles.show', compact('article'));
     }

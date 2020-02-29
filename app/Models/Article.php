@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -57,5 +60,26 @@ class Article extends Model
         }
 
         return $query;
+    }
+
+    public function handleSEOHeaders()
+    {
+        $this->load(['category']);
+
+        SEOMeta::setDescription($this->summary);
+        SEOMeta::addMeta('article:published_time', $this->created_at->toW3CString(), 'property');
+        SEOMeta::addMeta('article:section', $this->category->name, 'property');
+
+        OpenGraph::setTitle($this->title);
+        OpenGraph::setDescription($this->summary);
+        OpenGraph::addProperty('type', 'article');
+        OpenGraph::addProperty('locale', 'pt-br');
+        OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
+
+        JsonLd::setTitle($this->title);
+        JsonLd::setDescription($this->summary);
+        JsonLd::setType('Article');
+
+        return $this;
     }
 }

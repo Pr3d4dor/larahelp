@@ -27,6 +27,8 @@ class CategoryController extends Controller
 
     public function show(Request $request, Category $category)
     {
+        $category->handleSEOHeaders();
+
         $articles = $category
             ->articles()
             ->filter($request)

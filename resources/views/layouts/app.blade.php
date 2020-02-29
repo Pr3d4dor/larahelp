@@ -11,30 +11,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{  asset('docsui/favicon.png') }}">
 
-    <!--  Meta tags -->
-    <meta name="keywords" content="documentation template, help desk, open source, free template, freebies, bootstrap 4, bootstrap4">
-    <meta name="description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
-
-    <!-- Schema.org -->
-    <meta itemprop="name" content="Documentation Help Desk by Htmlstream">
-    <meta itemprop="description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
-    <meta itemprop="image" content="docs-ui-kit-thumbnail.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="product">
-    <meta name="twitter:site" content="@htmlstream">
-    <meta name="twitter:title" content="Documentation Help Desk by Htmlstream">
-    <meta name="twitter:description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
-    <meta name="twitter:creator" content="@htmlstream">
-    <meta name="twitter:image" content="docs-ui-kit-thumbnail.jpg">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Documentation Help Desk by Htmlstream">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://htmlstream.com/preview/docs-ui-kit/index.html">
-    <meta property="og:image" content="docs-ui-kit-thumbnail.jpg">
-    <meta property="og:description" content="Docs UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT license. The UI Kit comes with 10 beautiful complete and functional pages including lots of reusable and customizable UI Blocks. Every component crafted with love to speed up your workflow.">
-    <meta property="og:site_name" content="Htmlstream">
+    {!! SEO::generate(true) !!}
 
     <!-- Google Fonts -->
     <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">

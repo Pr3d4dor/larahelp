@@ -28,6 +28,8 @@ class TagController extends Controller
 
     public function show(Request $request, Tag $tag)
     {
+        $tag->handleSEOHeaders();
+
         $articles = $tag
             ->articles()
             ->filter($request)
