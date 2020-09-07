@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
-            "version": "v3.0.2",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColorlibHQ/AdminLTE.git",
-                "reference": "0e48302342e9c04174ed73902b08324d47d4e792"
+                "reference": "6b8b69261f1aacbb4be037c934f3c3652e6dff27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/0e48302342e9c04174ed73902b08324d47d4e792",
-                "reference": "0e48302342e9c04174ed73902b08324d47d4e792",
+                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/6b8b69261f1aacbb4be037c934f3c3652e6dff27",
+                "reference": "6b8b69261f1aacbb4be037c934f3c3652e6dff27",
                 "shasum": ""
             },
             "type": "library",
@@ -43,7 +43,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2020-01-17T08:05:37+00:00"
+            "time": "2020-05-19T20:41:11+00:00"
         },
         {
             "name": "artesaos/seotools",
@@ -594,24 +594,25 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v3.0.8",
+            "version": "v3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "6290b5aef439a4f16d22557ac1df4f8b1b0f4a19"
+                "reference": "496e7cb3a770fcf05e78627d1b3cb0f3e4c865f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/6290b5aef439a4f16d22557ac1df4f8b1b0f4a19",
-                "reference": "6290b5aef439a4f16d22557ac1df4f8b1b0f4a19",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/496e7cb3a770fcf05e78627d1b3cb0f3e4c865f3",
+                "reference": "496e7cb3a770fcf05e78627d1b3cb0f3e4c865f3",
                 "shasum": ""
             },
             "require": {
                 "almasaeed2010/adminlte": "^3.0",
-                "laravel/framework": "^6.0",
+                "laravel/framework": ">=6.0",
                 "php": ">=7.2.0"
             },
             "require-dev": {
+                "orchestra/testbench": ">=4.0",
                 "phpunit/phpunit": "^8.3"
             },
             "type": "library",
@@ -644,7 +645,7 @@
                 "administrator",
                 "laravel"
             ],
-            "time": "2019-12-21T10:38:36+00:00"
+            "time": "2020-07-17T17:35:17+00:00"
         },
         {
             "name": "laravel/framework",
