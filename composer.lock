@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e92d550fbece219efa7a8cd4be92708b",
+    "content-hash": "c8efe900fd5937b03c3d6ea7f86b7339",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -47,27 +47,27 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.16.0",
+            "version": "v0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "9e91926d27f46652ba01ff217028aecd97d757b1"
+                "reference": "91c9fc3ee18db01d220dd47708f303b8eff8078b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/9e91926d27f46652ba01ff217028aecd97d757b1",
-                "reference": "9e91926d27f46652ba01ff217028aecd97d757b1",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/91c9fc3ee18db01d220dd47708f303b8eff8078b",
+                "reference": "91c9fc3ee18db01d220dd47708f303b8eff8078b",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/config": "5.8.*|^6.0",
-                "illuminate/support": "5.8.*|^6.0",
+                "illuminate/config": "5.8.* || ^6.0 || ^7.0",
+                "illuminate/support": "5.8.* || ^6.0 || ^7.0",
                 "php": ">=7.1"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.8.4|^4.0",
-                "phpspec/phpspec": "~5.1.1"
+                "orchestra/testbench": "~3.8.4 || ^4.0 || ^5.0",
+                "phpspec/phpspec": "~5.1.1 || ^6.0"
             },
             "type": "library",
             "extra": {
@@ -79,6 +79,7 @@
                         "SEOMeta": "Artesaos\\SEOTools\\Facades\\SEOMeta",
                         "OpenGraph": "Artesaos\\SEOTools\\Facades\\OpenGraph",
                         "Twitter": "Artesaos\\SEOTools\\Facades\\TwitterCard",
+                        "JsonLd": "Artesaos\\SEOTools\\Facades\\JsonLd",
                         "SEO": "Artesaos\\SEOTools\\Facades\\SEOTools"
                     }
                 }
@@ -101,7 +102,7 @@
             "description": "SEO Tools for Laravel and Lumen",
             "keywords": [
                 "JSON-LD",
-                "laravel5",
+                "laravel",
                 "lumen",
                 "metatags",
                 "opengraph",
@@ -109,7 +110,7 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2019-09-05T13:49:10+00:00"
+            "time": "2020-06-19T22:31:46+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
