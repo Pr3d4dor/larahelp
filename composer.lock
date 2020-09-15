@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ac28c8b8f95a48d35f18364aa1b2686",
+    "content-hash": "8f2028290db8f6688dca1592074bd3b5",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -47,22 +47,22 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.18.0",
+            "version": "v0.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "91c9fc3ee18db01d220dd47708f303b8eff8078b"
+                "reference": "e1e90fb8f542eb01d16f785a9988915e762f503e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/91c9fc3ee18db01d220dd47708f303b8eff8078b",
-                "reference": "91c9fc3ee18db01d220dd47708f303b8eff8078b",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/e1e90fb8f542eb01d16f785a9988915e762f503e",
+                "reference": "e1e90fb8f542eb01d16f785a9988915e762f503e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/config": "5.8.* || ^6.0 || ^7.0",
-                "illuminate/support": "5.8.* || ^6.0 || ^7.0",
+                "illuminate/config": "5.8.* || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "5.8.* || ^6.0 || ^7.0 || ^8.0",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -110,7 +110,7 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2020-06-19T22:31:46+00:00"
+            "time": "2020-09-14T13:33:11+00:00"
         },
         {
             "name": "asm89/stack-cors",
