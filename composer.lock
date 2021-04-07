@@ -890,16 +890,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.35.1",
+            "version": "v8.36.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d118c0df39e7524131176aaf76493eae63a8a602"
+                "reference": "91c454715b81b9a39f718651d4e2f8104d45e7c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d118c0df39e7524131176aaf76493eae63a8a602",
-                "reference": "d118c0df39e7524131176aaf76493eae63a8a602",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/91c454715b81b9a39f718651d4e2f8104d45e7c2",
+                "reference": "91c454715b81b9a39f718651d4e2f8104d45e7c2",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-03-30T21:34:17+00:00"
+            "time": "2021-04-06T21:14:06+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -4817,16 +4817,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.5.2",
+            "version": "v3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "cae0a8d1cb89b0f0522f65e60465e16d738e069b"
+                "reference": "b8af309dea71eab3f2c942652969f518130228ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/cae0a8d1cb89b0f0522f65e60465e16d738e069b",
-                "reference": "cae0a8d1cb89b0f0522f65e60465e16d738e069b",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/b8af309dea71eab3f2c942652969f518130228ee",
+                "reference": "b8af309dea71eab3f2c942652969f518130228ee",
                 "shasum": ""
             },
             "require": {
@@ -4886,7 +4886,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
-                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.5.2"
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.5.4"
             },
             "funding": [
                 {
@@ -4894,7 +4894,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-01-06T14:21:44+00:00"
+            "time": "2021-04-06T18:11:42+00:00"
         },
         {
             "name": "composer/semver",
@@ -5731,16 +5731,16 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.16.4",
+            "version": "v1.16.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "c86c717e4bf3c6d98422da5c38bfa7b0f494b04c"
+                "reference": "6d51ee9e94cff14412783785e79a4e7ef97b9d62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/c86c717e4bf3c6d98422da5c38bfa7b0f494b04c",
-                "reference": "c86c717e4bf3c6d98422da5c38bfa7b0f494b04c",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/6d51ee9e94cff14412783785e79a4e7ef97b9d62",
+                "reference": "6d51ee9e94cff14412783785e79a4e7ef97b9d62",
                 "shasum": ""
             },
             "require": {
@@ -5790,9 +5790,9 @@
             ],
             "support": {
                 "issues": "https://github.com/maximebf/php-debugbar/issues",
-                "source": "https://github.com/maximebf/php-debugbar/tree/v1.16.4"
+                "source": "https://github.com/maximebf/php-debugbar/tree/v1.16.5"
             },
-            "time": "2020-12-07T10:48:48+00:00"
+            "time": "2020-12-07T11:07:24+00:00"
         },
         {
             "name": "mockery/mockery",
