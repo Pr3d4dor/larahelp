@@ -1434,16 +1434,16 @@
         },
         {
             "name": "lucascudo/laravel-pt-br-localization",
-            "version": "v1.1.7",
+            "version": "v1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucascudo/laravel-pt-BR-localization.git",
-                "reference": "acfba096d25751384bf9f6082ae9060211a3552d"
+                "reference": "162e26243da8592a26337c3c55e13ead80358753"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucascudo/laravel-pt-BR-localization/zipball/acfba096d25751384bf9f6082ae9060211a3552d",
-                "reference": "acfba096d25751384bf9f6082ae9060211a3552d",
+                "url": "https://api.github.com/repos/lucascudo/laravel-pt-BR-localization/zipball/162e26243da8592a26337c3c55e13ead80358753",
+                "reference": "162e26243da8592a26337c3c55e13ead80358753",
                 "shasum": ""
             },
             "type": "library",
@@ -1472,9 +1472,9 @@
             "description": "Arquivos de linguagem em Português do Brasil (pt-BR) para Laravel >= 5.6",
             "support": {
                 "issues": "https://github.com/lucascudo/laravel-pt-BR-localization/issues",
-                "source": "https://github.com/lucascudo/laravel-pt-BR-localization/tree/v1.1.7"
+                "source": "https://github.com/lucascudo/laravel-pt-BR-localization/tree/v1.1.10"
             },
-            "time": "2021-06-22T08:41:45+00:00"
+            "time": "2021-09-07T08:37:58+00:00"
         },
         {
             "name": "monolog/monolog",
