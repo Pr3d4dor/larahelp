@@ -5710,16 +5710,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v6.19.1",
+            "version": "v6.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "9689f78bfdcef35a8ffd67950a398528454d99ce"
+                "reference": "c042f8d389b8fdcd9543032d1ef8dbe47c8a245f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/9689f78bfdcef35a8ffd67950a398528454d99ce",
-                "reference": "9689f78bfdcef35a8ffd67950a398528454d99ce",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/c042f8d389b8fdcd9543032d1ef8dbe47c8a245f",
+                "reference": "c042f8d389b8fdcd9543032d1ef8dbe47c8a245f",
                 "shasum": ""
             },
             "require": {
@@ -5777,9 +5777,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/dusk/issues",
-                "source": "https://github.com/laravel/dusk/tree/v6.19.1"
+                "source": "https://github.com/laravel/dusk/tree/v6.19.2"
             },
-            "time": "2021-10-19T15:05:44+00:00"
+            "time": "2021-10-20T10:10:26+00:00"
         },
         {
             "name": "laravel/legacy-factories",
