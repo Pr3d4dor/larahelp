@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7528ebfd177f0af978fd07643e93c46",
+    "content-hash": "5818b827dd4e99f10dd221268dc632ff",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -51,16 +51,16 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.20.2",
+            "version": "v0.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "94fbb3b331dab7433b335a9aafd74a312a5525fe"
+                "reference": "bd2b4daa7607413b59ff0267f6cb9ad955b1ebd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/94fbb3b331dab7433b335a9aafd74a312a5525fe",
-                "reference": "94fbb3b331dab7433b335a9aafd74a312a5525fe",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/bd2b4daa7607413b59ff0267f6cb9ad955b1ebd8",
+                "reference": "bd2b4daa7607413b59ff0267f6cb9ad955b1ebd8",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "issues": "https://github.com/artesaos/seotools/issues",
                 "source": "https://github.com/artesaos/seotools"
             },
-            "time": "2021-09-29T14:39:51+00:00"
+            "time": "2022-02-06T04:33:16+00:00"
         },
         {
             "name": "asm89/stack-cors",
